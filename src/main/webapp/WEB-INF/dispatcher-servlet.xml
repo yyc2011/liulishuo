@@ -17,6 +17,10 @@
     <!--开启事务管理-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
     <!--静态资源访问-->
     <mvc:default-servlet-handler/>
 
